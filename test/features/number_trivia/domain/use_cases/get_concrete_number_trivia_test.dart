@@ -33,7 +33,7 @@ void main() {
           .thenAnswer((_) async => const Right(tNumberTrivia));
 
       // act
-      final result = await useCase(number: tNumber);
+      final result = await useCase(const Params(number: tNumber));
 
       // assert
       expect(result, const Right(tNumberTrivia));
