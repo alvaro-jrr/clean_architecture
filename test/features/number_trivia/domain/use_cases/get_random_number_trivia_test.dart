@@ -12,11 +12,8 @@ import 'package:clean_architecture/features/number_trivia/domain/repositories/nu
 import 'get_random_number_trivia_test.mocks.dart';
 
 void main() {
-  MockNumberTriviaRepository mockNumberTriviaRepository =
-      MockNumberTriviaRepository();
-
-  GetRandomNumberTrivia useCase =
-      GetRandomNumberTrivia(mockNumberTriviaRepository);
+  late MockNumberTriviaRepository mockNumberTriviaRepository;
+  late GetRandomNumberTrivia useCase;
 
   setUp(() {
     mockNumberTriviaRepository = MockNumberTriviaRepository();

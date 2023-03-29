@@ -11,11 +11,8 @@ import 'package:clean_architecture/features/number_trivia/domain/repositories/nu
 import 'get_concrete_number_trivia_test.mocks.dart';
 
 void main() {
-  MockNumberTriviaRepository mockNumberTriviaRepository =
-      MockNumberTriviaRepository();
-
-  GetConcreteNumberTrivia useCase =
-      GetConcreteNumberTrivia(mockNumberTriviaRepository);
+  late MockNumberTriviaRepository mockNumberTriviaRepository;
+  late GetConcreteNumberTrivia useCase;
 
   setUp(() {
     mockNumberTriviaRepository = MockNumberTriviaRepository();
