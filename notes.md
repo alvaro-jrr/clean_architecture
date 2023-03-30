@@ -39,3 +39,7 @@ Entonces, los `Models` son clases que extienden los `Entities` y agregan funcion
 Los `Models` pueden tener más campos, por ejemplo, si se debe almacenar el `id`. Este se puede almacenar `Models`.
 
 Los remote data sources ejecutarán peticiones http a las APIs para obtener la data. Mientras que los local data sources obtendrán los datos de la db local o shared preferences. Finalmente, estos se combinarán en el `Repository`.
+
+## Tests con Fixtures
+
+Un fixture es es un archivo que almacena al respuesta que debe recibir de un data source. La data en los fixtures puede contener valores de testing, pero debe tener todos los campos y seguir la estructura de la respuesta.
