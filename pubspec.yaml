@@ -39,8 +39,8 @@ dependencies:
     dartz: ^0.10.1
     http: ^0.13.5
     shared_preferences: ^2.0.20
-    provider: ^6.0.5
     internet_connection_checker: ^1.0.0+1
+    bloc: ^8.1.1
 
 dev_dependencies:
     flutter_test:
