@@ -43,3 +43,11 @@ Los remote data sources ejecutarán peticiones http a las APIs para obtener la d
 ## Tests con Fixtures
 
 Un fixture es es un archivo que almacena al respuesta que debe recibir de un data source. La data en los fixtures puede contener valores de testing, pero debe tener todos los campos y seguir la estructura de la respuesta.
+
+## Injection
+
+Las clases que requieren limpieza (como un Bloc) no deberían ser registradas como singletons. Deben registrarse como singletons aquellos que no mantengan un estado ni requieran limpieza.
+
+Se pueden registrar los singletons como lazy o no, se debe usar lazy cuando se desea que no se resuelvan las dependencias de forma inmediata, sino que lo haga cuando sea necesario.
+
+Los use cases dependen de los contratos definidos en el repository. En estos casos se debe registrar con el tipo de dato definido por el use case, por ejemplo: `NumberTriviaRepository`. Y retornar la instancia de la implementación: `NumberTriviaRepositoryImpl`.
