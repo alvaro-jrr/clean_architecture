@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:clean_architecture/core/use_cases/use_case.dart';
 import 'package:dartz/dartz.dart';
@@ -31,8 +33,9 @@ class NumberTriviaBloc extends Bloc<NumberTriviaEvent, NumberTriviaState> {
       final inputEither =
           inputConverter.stringToUnsignedInteger(event.numberString);
 
-      inputEither.fold(
-        (failure) => emit(const Error(message: invalidInputFailureMessage)),
+      await inputEither.fold(
+        (failure) async =>
+            emit(const Error(message: invalidInputFailureMessage)),
         (integer) async {
           emit(Loading());
 
